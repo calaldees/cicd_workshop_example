@@ -4,10 +4,10 @@ build:
 	docker build --tag ${DOCKER_IMAGE} .
 
 run_pytest:
-	docker run --rm -it ${DOCKER_IMAGE} pytest
+	docker run --rm ${DOCKER_IMAGE} pytest
 
 run_black_check:
-	docker run --rm -it ${DOCKER_IMAGE} black --check .
+	docker run --rm ${DOCKER_IMAGE} black --check .
 
 shell:
 	docker run --rm -it --volume ${PWD}:/app/ ${DOCKER_IMAGE} /bin/bash
